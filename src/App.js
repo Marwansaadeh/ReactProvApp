@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Employees from './Components/Employees';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+class App extends Component {
+  
+  state = {
+    employees: [],
+  }
+    
+    componentDidMount() {
+      fetch('http://dummy.restapiexample.com/api/v1/employees')
+      .then(res => res.json())
+      .then((data) => {
+        console.log(data)
+        this.setState({ employees: data.data})
+      })
+      .catch(console.log)
+     
+
+    }
+    
+    
+    
+    render() {
+      return (
+        <React.Fragment>   
+        <Employees employees={this.state.employees} />
+        </React.Fragment>
+      )
+    }
+    
+  }
+  export default App
+  
+   

@@ -1,13 +1,121 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+    font-size: 17px;
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    margin: 0;
+    padding: 0;
+}
+a{text-decoration: none
+
+}
+
+
+.product-logistics-table {
+  width: 80%;
+  max-width: 80%;
+  font-size: 17px;
+  text-align: left;
+  border-collapse: collapse;
+  table-layout:fixed;
+  margin-left: 8%;
+}
+
+.product-logistics-table tbody td:first-child {
+  font-weight: 600;
+  
+}
+
+.product-logistics-table th {
+  font-weight: 600;  
+}
+
+.product-logistics-table tbody td{
+  padding-bottom:1.5%;
+  padding-top:1.5%;
+  vertical-align: top;
+}
+
+.product-logistics-table thead th{ 
+  padding-bottom:2%;
+}
+
+.product-logistics-table thead tr th {
+  border-bottom: 1px solid #ebedf0;
+}
+.product-logistics-table tbody tr{
+  border-bottom: 1px solid #ebedf0;
+}
+
+
+.product-logistics-table tbody {
+  font-weight: 400;
+}
+
+
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+.product-logistics-table {
+  width: 100%;
+  max-width:100%;
+  margin-left: 0%;
+}
+
+/* Force table to not be like tables anymore */
+.product-logistics-table, thead, tbody, th, td, tr { 
+display: block; 
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+thead tr { 
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+
+
+.product-logistics-table tbody th{
+     border-bottom:white;
+}
+.product-logistics-table tbody tr{
+     border-bottom:white;
+     margin-left:2% ;
+     margin-right: 2%;
+}
+
+.product-logistics-table td{ 
+/* Behave  like a "row" */
+border: none;
+position: relative;
+padding-left: 50%; 
+border-bottom: 1px solid #ebedf0 !important;
+}
+
+td:before { 
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: 6px;
+padding-right: 10px; 
+white-space: nowrap;
+font-weight: 600; 
+}
+td:first-child { 
+/* Now like a table header */
+background-color: rgb(189, 181, 181);
+border-bottom: rgb(189, 181, 181);
+
+}
+
+/*
+Label the data
+*/
+td:nth-of-type(1):before { content: "Id"; }
+td:nth-of-type(2):before { content: "Name"; }
+td:nth-of-type(3):before { content: "View Details"; }
+
+
 }
